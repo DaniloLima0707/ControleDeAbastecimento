@@ -1,3 +1,8 @@
 <resources>
     <string name="app_name">ControledeAbastecimento</string>
+    <string name="kmAtual">KM Atual</string>
+    <string name="qntAbastecida">QNT Abastecida</string>
+    <string name="diaAbastecido">Data do Abastecimento</string>
+    <string name="valorAbastecido">Valor Abastecido</string>
+    <string name="salvar">Salvar</string>
 </resources>
