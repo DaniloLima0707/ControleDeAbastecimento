@@ -17,9 +17,10 @@ public class RegistroDB {
     public void inserir(Registro registro) {
         conexao = db.getWritableDatabase();//abre o bd
         ContentValues valores = new ContentValues();
-        valores.put("campoNom", registro.getCampoNom());
-        valores.put("campoTel", registro.getCampoTel());
-        valores.put("campoDataNasc", registro.getCampoDataNasc());
+        valores.put("KMatual", registro.getKMatual());
+        valores.put("QNTAbastecida", registro.getQNTAbastecida());
+        valores.put("DIAAbastecido", registro.getDIAAbastecido());
+        valores.put("VALORAbastecido", registro.getVALORAbastecido());
         conexao.update("Lista", valores, "id=?", new String[]{registro.getId().toString()});
         conexao.close();
     }
@@ -27,9 +28,10 @@ public class RegistroDB {
     public void atualizar(Registro registro) {
         conexao = db.getWritableDatabase();
         ContentValues valores = new ContentValues();
-        valores.put("campoNom", registro.getCampoNom());
-        valores.put("campoTel", registro.getCampoTel());
-        valores.put("campoDataNasc", registro.getCampoDataNasc());
+        valores.put("KMatual", registro.getKMatual());
+        valores.put("QNTAbastecida", registro.getQNTAbastecida());
+        valores.put("DIAAbastecido", registro.getDIAAbastecido());
+        valores.put("VALORAbastecido", registro.getVALORAbastecido());
         conexao.update("Lista", valores, "id=?", new String[]{registro.getId().toString()});
         conexao.close();
     }
@@ -42,18 +44,20 @@ public class RegistroDB {
     public void lista(List dados){
         dados.clear();
         conexao = db.getReadableDatabase();
-        String names[] = {"id", "campoNom", "campoTel", "campoDataNasc"};
+        String names[] = {"id", "KMatual", "QNTAbastecida", "DIAAbastecido", "VALORAbastecido"};
         Cursor query = conexao.query("Lista", names, null, null, null, null, "campoNom");
         while (query.moveToNext()){
             Registro registro = new Registro();
             registro.setId(Integer.parseInt(
                     query.getString(0)));
-            registro.setCampoNom(
+            registro.setKMatual(
                     query.getString(1));
-            registro.setCampoTel(
+            registro.setQNTAbastecida(
                     query.getString(2));
-            registro.setCampoDataNasc(
+            registro.setDIAAbastecido(
                     query.getString(3));
+            registro.setVALORAbastecido(
+                    query.getString(4));
             dados.add(registro);
         }
         conexao.close();
