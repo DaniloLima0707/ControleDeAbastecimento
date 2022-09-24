@@ -37,6 +37,9 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        db = new DBHelper(this);
+        registroDB = new RegistroDB(db);
+
         kmAtual = findViewById(R.id.kmAtual);
         qntAbastecida = findViewById(R.id.qntAbastecida);
         diaAbastecimento = findViewById(R.id.diaAbastecimento);
