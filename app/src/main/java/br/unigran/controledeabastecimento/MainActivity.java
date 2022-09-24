@@ -30,6 +30,7 @@ public class MainActivity extends AppCompatActivity {
     DBHelper db;
     RegistroDB registroDB;
     Integer atualiza;
+    Integer lista;
     Integer confirma = null;
 
     @Override

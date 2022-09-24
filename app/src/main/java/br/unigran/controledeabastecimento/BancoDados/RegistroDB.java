@@ -44,8 +44,8 @@ public class RegistroDB {
     public void lista(List dados){
         dados.clear();
         conexao = db.getReadableDatabase();
-        String names[] = {"id", "KMatual", "QNTAbastecida", "DIAAbastecido", "VALORAbastecido"};
-        Cursor query = conexao.query("Lista", names, null, null, null, null, "campoNom");
+        String names[] = {"id", "kmAtual", "qntAbastecido", "diaAbastecido", "valorAbastecido"};
+        Cursor query = conexao.query("lista", names, null, null, null, null, "kmAtual");
         while (query.moveToNext()){
             Registro registro = new Registro();
             registro.setId(Integer.parseInt(
