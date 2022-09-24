@@ -13,12 +13,12 @@ public class DBHelper extends SQLiteOpenHelper {
 
     @Override
     public void onCreate(SQLiteDatabase sqLiteDatabase) {
-        sqLiteDatabase.execSQL("create table Lista(" +
-                "id interger primary key autoincrement," +
+        sqLiteDatabase.execSQL("create table lista(" +
+                "id interger primary key," +
                 "kmAtual varchar(7)," +
                 "qntAbastecido varchar(7)," +
                 "diaAbastecido varchar(7)," +
-                "valorAbastecido varchar(15))");
+                "valorAbastecido varchar(15));");
     }
 
     @Override
